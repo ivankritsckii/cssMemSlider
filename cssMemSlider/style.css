@@ -19,8 +19,8 @@
     }
     .navigation {
         position: absolute;
-        bottom: 5%;
-        left: 90%;
+        bottom: 3%;
+        left: 85%;
         transform: translateX(-50%);
         display: flex;
     }
@@ -30,13 +30,17 @@
         margin: 6px;
         cursor: pointer;
         background-color: blue;
-        border-radius: 15px;
+        border: 30px solid white;
+        border-radius: 50px;
         transition: all .4s ease;
     }
     .button:hover{
         background-color: rgb(12, 126, 179);
-       
-        }
+               }
+    .button:active{
+        background-color: black;
+    }
+   
     input {
         position: absolute;
         visibility: hidden;
@@ -75,4 +79,32 @@
     }
     #r4:checked ~ .s1 {
         margin-left: -75%;
+    }
+@media only screen and (max-width: 320px){
+    .slider {
+        height: 480px;
+        width: 320px;}
+     .navigation {
+                position: absolute;
+                bottom: 10%;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;}
+        .button{
+            height: 5px;
+            width: 5px;
+            margin: 3px;
+            cursor: pointer;
+            background-color: blue;
+            border: 3px solid white;
+            border-radius: 6px;
+            transition: all .4s ease;}
+         p {position: relative;
+                left: 5%;
+                bottom: -5%;
+                margin: 0;
+                padding: 0;
+            font-size: 20px;}
+           
+
     }
