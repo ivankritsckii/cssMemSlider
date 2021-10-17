@@ -34,9 +34,11 @@
         border-radius: 50px;
         transition: all .4s ease;
     }
+
     .button:hover{
         background-color: rgb(12, 126, 179);
                }
+    
     .button:active{
         background-color: black;
     }
@@ -78,8 +80,9 @@
         margin-left: -50%;
     }
     #r4:checked ~ .s1 {
-        margin-left: -75%;
-    }
+        margin-left: -75%;}
+
+
 @media only screen and (max-width: 320px){
     .slider {
         height: 480px;
