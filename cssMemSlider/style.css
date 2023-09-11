@@ -1,40 +1,39 @@
-*{ margin: 0;
-    padding: 0;}
-    body {background-color: aqua;
+
+body {background-color: aqua;
     }
     
     .slider {
-        height: 1080px;
-        width: 1920px;
+        height: 80%;
+        width: 70%;
         overflow: hidden;
-        border: 5% solid rgb(59, 49, 49);
-        margin: 0 auto;
+        margin: 10% auto;
         background-color: white;
     }
-     .middle {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+    .sliders {
+        width: 400%;
+        height: 100%;
+        display: grid;
+        grid-template-areas:
+        "A A A A A A A A"
+        "B C D D D D D D";
+        grid-template-rows: 85% 15%;
+       }
+
     .navigation {
-        position: absolute;
-        bottom: 3%;
-        left: 85%;
-        transform: translateX(-50%);
         display: flex;
+        width: 55vw;
+        grid-area: C;
+        margin-left: 38vw;
     }
     .button{
-        height: 30px;
-        width: 30px;
-        margin: 6px;
+        height: 2vw;
+        width: 2vw;
         cursor: pointer;
         background-color: blue;
-        border: 30px solid white;
-        border-radius: 50px;
+        border: 0.5vw solid white;
+        border-radius: 3vw;
         transition: all .4s ease;
     }
-
     .button:hover{
         background-color: rgb(12, 126, 179);
                }
@@ -42,21 +41,10 @@
     .button:active{
         background-color: black;
     }
-   
+
     input {
-        position: absolute;
         visibility: hidden;
-    }
-   
-    p {position: relative;
-        left: 5%;
-        bottom: 5%;
-    font-size: 50px;}
-    
-    .sliders {
-     width: 400%;
-     height: 100%;
-     display: flex;
+        width: 0;
     }
     .slide{
         width: 25%;
@@ -66,48 +54,70 @@
         margin: 5%;
         margin-top: 3%;
         width: 90%;
-        height: 80%;
-       
+        height: 80%; 
     }
-      
-    #r1:checked ~ .s1 {
+    .slider_img{
+        display: flex;
+        grid-area: A;
+    }
+    .slider_name{
+        grid-area: B;
+        overflow: hidden;
+        width: 9vw;
+        display: flex;
+        margin-left: 5vw;
+    };
+
+    #r1:checked ~ .slider_img>.s1 {
         margin-left: 0%;
     }
-    #r2:checked ~ .s1 {
+    #r2:checked ~ .slider_img>.s1 {
         margin-left: -25%;
     }
-    #r3:checked ~ .s1 {
+    #r3:checked ~ .slider_img>.s1 {
         margin-left: -50%;
     }
-    #r4:checked ~ .s1 {
+    #r4:checked ~ .slider_img>.s1 {
         margin-left: -75%;}
 
-
-@media only screen and (max-width: 320px){
-    .slider {
-        height: 480px;
-        width: 320px;}
-     .navigation {
-                position: absolute;
-                bottom: 10%;
-                left: 50%;
-                transform: translateX(-50%);
-                display: flex;}
-        .button{
-            height: 5px;
-            width: 5px;
-            margin: 3px;
-            cursor: pointer;
-            background-color: blue;
-            border: 3px solid white;
-            border-radius: 6px;
-            transition: all .4s ease;}
-         p {position: relative;
-                left: 5%;
-                bottom: -5%;
-                margin: 0;
-                padding: 0;
-            font-size: 20px;}
-           
-
+    
+        #r1:checked ~ .slider_name>.s1 {
+        margin-left: 0%;
     }
+    #r2:checked ~ .slider_name>.s1 {
+        margin-left: -9vw;
+    }
+    #r3:checked ~ .slider_name>.s1 {
+        margin-left: -18vw;
+    }
+    #r4:checked ~ .slider_name>.s1 {
+        margin-left: -27vw;}
+    
+    #r1:checked ~ .navigation>.b1 {
+        background-color: brown;
+    }
+    #r2:checked ~ .navigation>.b2 {
+        background-color: brown;
+    }
+    #r3:checked ~ .navigation>.b3 {
+        background-color: brown;
+    }
+    #r4:checked ~ .navigation>.b4 {
+        background-color: brown;
+    }
+
+@media screen and (max-width: 320px){
+    .sliders {
+        grid-template-areas:
+        "A A A A"
+        "C C C C"
+        "B B B B";
+        grid-template-rows: 84% 7.5% 7.5%;
+       }
+       .slider_name {
+        margin-left: 4vw;
+    }
+    .navigation {
+        margin-left: 27vw;
+    }
+}
